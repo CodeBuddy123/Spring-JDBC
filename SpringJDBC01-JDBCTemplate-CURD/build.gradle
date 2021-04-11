@@ -1,0 +1,29 @@
+
+
+plugins {
+ 
+    id 'application'
+}
+
+repositories {
+   
+    jcenter()
+}
+
+dependencies {
+  // https://mvnrepository.com/artifact/org.springframework/spring-context-support
+implementation group: 'org.springframework', name: 'spring-context-support', version: '5.3.4'
+ // https://mvnrepository.com/artifact/org.projectlombok/lombok
+compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
+ // https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8
+implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '19.8.0.0'
+// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.4'
+// https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+implementation group: 'com.zaxxer', name: 'HikariCP', version: '4.0.3'
+// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
+
+
+
+}

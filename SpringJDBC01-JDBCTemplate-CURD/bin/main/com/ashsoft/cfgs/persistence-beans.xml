@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+ <bean id="hkds" class="com.zaxxer.hikari.HikariDataSource">
+	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+	<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:ORCL"/>
+	<property name="username" value="scott"/>
+	<property name="password" value="tiger"/>
+	<property name="connectionTimeout" value="600000"/>
+</bean> 
+
+<!-- <bean id="hkds" class="com.zaxxer.hikari.HikariDataSource">
+	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+	<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ashdb"/>
+	<property name="username" value="root"/>
+	<property name="password" value="ashish"/>
+	<property name="connectionTimeout" value="600000"/>
+</bean> -->
+
+<bean id="jTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+	<property name="dataSource" ref="hkds"/>
+</bean>
+
+<bean id="empDao" class="com.ashsoft.dao.EmployeeDaoImpl">
+	<constructor-arg  ref="jTemplate"/>
+</bean>
+</beans>
